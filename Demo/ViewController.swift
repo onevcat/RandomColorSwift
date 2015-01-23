@@ -38,6 +38,9 @@ class ViewController: UICollectionViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         refresh()
+        
+        
+        
     }
     
     //MARK: Segue Transition
@@ -48,6 +51,11 @@ class ViewController: UICollectionViewController {
             settingVC.count = count
             settingVC.hue = hue
             settingVC.luminosity = luminosity
+        } else if segue.identifier == "showDetail" {
+            if let indexPath = collectionView?.indexPathForCell(sender as UICollectionViewCell) {
+                let detailVC = segue.destinationViewController as DetailViewController
+                detailVC.color = colors[indexPath.row]
+            }
         }
     }
     
@@ -68,11 +76,6 @@ extension ViewController: UICollectionViewDataSource {
         cell.contentView.backgroundColor = colors[indexPath.row]
         return cell
     }
-}
-
-//MARK: Collection View Delegate
-extension ViewController: UICollectionViewDelegate {
-    
 }
 
 
