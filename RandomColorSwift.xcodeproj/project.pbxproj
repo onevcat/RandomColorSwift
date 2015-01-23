@@ -24,9 +24,9 @@
 		4B1F68351A71013B007A07DD /* ColorDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1F68341A71013B007A07DD /* ColorDefinition.swift */; };
 		4BA3C5D61A72081100CC3CBA /* HueExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA3C5D51A72081100CC3CBA /* HueExtension.swift */; };
 		4BC981EE1A72199600D35704 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC981ED1A72199600D35704 /* DetailViewController.swift */; };
-		4BC981F71A721F1900D35704 /* ntc.js in Resources */ = {isa = PBXBuildFile; fileRef = 4BC981F61A721F1900D35704 /* ntc.js */; };
 		4BC981F91A72244400D35704 /* NameOfColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC981F81A72244400D35704 /* NameOfColor.swift */; };
 		4BD46D0A1A71FA5B00469BDD /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD46D091A71FA5B00469BDD /* SettingViewController.swift */; };
+		4BF134FD1A72427200915038 /* ntc.js in Resources */ = {isa = PBXBuildFile; fileRef = 4BF134FC1A72427200915038 /* ntc.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,9 +97,9 @@
 		4B1F68341A71013B007A07DD /* ColorDefinition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorDefinition.swift; sourceTree = "<group>"; };
 		4BA3C5D51A72081100CC3CBA /* HueExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HueExtension.swift; sourceTree = "<group>"; };
 		4BC981ED1A72199600D35704 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		4BC981F61A721F1900D35704 /* ntc.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = ntc.js; sourceTree = "<group>"; };
 		4BC981F81A72244400D35704 /* NameOfColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameOfColor.swift; sourceTree = "<group>"; };
 		4BD46D091A71FA5B00469BDD /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		4BF134FC1A72427200915038 /* ntc.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = ntc.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,7 +178,7 @@
 		4B1F67F81A70F3D2007A07DD /* Demo */ = {
 			isa = PBXGroup;
 			children = (
-				4BC981F51A721F1900D35704 /* NameTheColor */,
+				4BF134FB1A72427200915038 /* third-party */,
 				4BD46D091A71FA5B00469BDD /* SettingViewController.swift */,
 				4BC981ED1A72199600D35704 /* DetailViewController.swift */,
 				4B1F67F91A70F3D2007A07DD /* AppDelegate.swift */,
@@ -231,12 +231,12 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		4BC981F51A721F1900D35704 /* NameTheColor */ = {
+		4BF134FB1A72427200915038 /* third-party */ = {
 			isa = PBXGroup;
 			children = (
-				4BC981F61A721F1900D35704 /* ntc.js */,
+				4BF134FC1A72427200915038 /* ntc.js */,
 			);
-			path = NameTheColor;
+			path = "third-party";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -378,9 +378,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BC981F71A721F1900D35704 /* ntc.js in Resources */,
 				4B1F68071A70F46C007A07DD /* LaunchScreen.xib in Resources */,
 				4B1F68081A70F46C007A07DD /* Main.storyboard in Resources */,
+				4BF134FD1A72427200915038 /* ntc.js in Resources */,
 				4B1F68041A70F3D2007A07DD /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
