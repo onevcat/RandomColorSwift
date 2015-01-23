@@ -38,9 +38,6 @@ class ViewController: UICollectionViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         refresh()
-        
-        
-        
     }
     
     //MARK: Segue Transition
@@ -60,7 +57,7 @@ class ViewController: UICollectionViewController {
     }
     
     func refresh() {
-        colors = randomColors(count, hue: hue, luminosity: luminosity)
+        colors = randomColorsCount(count, hue: hue, luminosity: luminosity)
         collectionView?.reloadData()
     }
 }
