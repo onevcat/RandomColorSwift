@@ -57,6 +57,14 @@ extension Hue {
     }
 }
 
+/**
+Generate a single random color with some conditions.
+
+:param: hue        Hue of target color. It will be the main property of the generated color. Default is .Random.
+:param: luminosity Luminosity of target color. It will decide the brightness of generated color. Default is .Random.
+
+:returns: A random color following input conditions. It will be a `UIColor` object for iOS target, and an `NSColor` object for OSX target.
+*/
 public func randomColor(hue: Hue = .Random, luminosity: Luminosity = .Random) -> Color {
     
     func randomWithin(range: Range) -> Int {
@@ -180,6 +188,15 @@ public func randomColor(hue: Hue = .Random, luminosity: Luminosity = .Random) ->
     #endif
 }
 
+/**
+Generate a set of random colors with some conditions.
+
+:param: count      The count of how many colors will be generated.
+:param: hue        Hue of target color. It will be the main property of the generated color. Default is .Random.
+:param: luminosity Luminosity of target color. It will decide the brightness of generated color. Default is .Random.
+
+:returns: An array of random colors following input conditions. The elements will be `UIColor` objects for iOS target, and `NSColor` objects for OSX target.
+*/
 public func randomColorsCount(count: Int, hue: Hue = .Random, luminosity: Luminosity = .Random) -> [Color] {
     var colors: [Color] = []
     while (colors.count < count) {
