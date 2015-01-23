@@ -22,7 +22,13 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import Foundation
+#if os(iOS)
+import UIKit
+public typealias Color = UIColor
+#else
+import Cocoa
+public typealias Color = NSColor
+#endif
 
 private var colorDictionary: [Hue: ColorDefinition] = [
     .Monochrome: ColorDefinition(hueRange: nil, lowerBounds: [(0,0), (100,0)]),
@@ -51,7 +57,7 @@ extension Hue {
     }
 }
 
-public func randomColor(hue: Hue = .Random, luminosity: Luminosity = .Random) -> UIColor {
+public func randomColor(hue: Hue = .Random, luminosity: Luminosity = .Random) -> Color {
     
     func randomWithin(range: Range) -> Int {
         assert(range.max >= range.min, "Max in range should be greater than min")
@@ -161,15 +167,21 @@ public func randomColor(hue: Hue = .Random, luminosity: Luminosity = .Random) ->
     let saturationValue = pickSaturation(color, hue, luminosity)
     let brightnessValue = pickBrightness(color, saturationValue, luminosity)
     
-    
-    return UIColor(hue: CGFloat(hueValue) / 360.0,
+    #if os(iOS)
+    return Color(hue: CGFloat(hueValue) / 360.0,
             saturation: CGFloat(saturationValue) / 100.0,
             brightness: CGFloat(brightnessValue) / 100.0,
                  alpha: 1.0)
+    #else
+    return Color(deviceHue: CGFloat(hueValue) / 360.0,
+                saturation: CGFloat(saturationValue) / 100.0,
+                brightness: CGFloat(brightnessValue) / 100.0,
+                     alpha: 1.0)
+    #endif
 }
 
-public func randomColors(count: Int, hue: Hue = .Random, luminosity: Luminosity = .Random) -> [UIColor] {
-    var colors: [UIColor] = []
+public func randomColorsCount(count: Int, hue: Hue = .Random, luminosity: Luminosity = .Random) -> [Color] {
+    var colors: [Color] = []
     while (colors.count < count) {
         colors.append(randomColor(hue: hue, luminosity: luminosity))
     }
