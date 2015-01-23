@@ -8,7 +8,7 @@ See the [demo and site](http://llllll.li/randomColor/) to know why does this exi
 
 ## Install
 
-I wish we could use CocoaPods or something else for package management for Swift. Currently, you can clone this repo and throw the source files under `RandomColor` folder to use it. I suggest to add them to a standalone Cocoa/CocoaTouch Framework target, to avoid potential risk of name conflict.
+I wish we could use CocoaPods or something else for package management for Swift. Currently, you can clone this repo and throw the source files under `RandomColor` folder into your project to use it. I suggest to add them to a standalone Cocoa/CocoaTouch Framework target, to avoid potential risk of name conflict.
 
 ## Example
 
