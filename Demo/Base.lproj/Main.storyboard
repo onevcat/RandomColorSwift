@@ -7,7 +7,7 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Random Color-->
         <scene sceneID="CgU-Ka-KfM">
             <objects>
                 <collectionViewController id="djG-2T-M5d" customClass="ViewController" customModule="RandomColorSwiftDemo" customModuleProvider="target" sceneMemberID="viewController">
@@ -40,7 +40,7 @@
                             <outlet property="delegate" destination="djG-2T-M5d" id="vlR-Oe-aV3"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="nBX-oz-6bc">
+                    <navigationItem key="navigationItem" title="Random Color" id="nBX-oz-6bc">
                         <barButtonItem key="rightBarButtonItem" title="Setting" id="H5i-Cs-Fgn">
                             <connections>
                                 <segue destination="uEZ-1h-nAk" kind="presentation" identifier="showSetting" modalPresentationStyle="formSheet" id="3OC-zR-ozY"/>
@@ -52,10 +52,10 @@
             </objects>
             <point key="canvasLocation" x="1562" y="532"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--Color-->
         <scene sceneID="Hnc-gx-UFf">
             <objects>
-                <viewController id="YR3-pc-dJC" customClass="DetailViewController" customModule="RandomColorSwiftDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Color" id="YR3-pc-dJC" customClass="DetailViewController" customModule="RandomColorSwiftDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Mza-6Z-IdD"/>
                         <viewControllerLayoutGuide type="bottom" id="2nC-LI-Ajw"/>
@@ -106,7 +106,7 @@
             </objects>
             <point key="canvasLocation" x="2356" y="974"/>
         </scene>
-        <!--Setting View Controller-->
+        <!--Setting-->
         <scene sceneID="cO6-ha-3xO">
             <objects>
                 <tableViewController id="Wuy-V5-GcU" customClass="SettingViewController" customModule="RandomColorSwiftDemo" customModuleProvider="target" sceneMemberID="viewController">
@@ -223,7 +223,7 @@
                             <outlet property="delegate" destination="Wuy-V5-GcU" id="PpA-IF-92O"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="pgO-Dc-Bpe">
+                    <navigationItem key="navigationItem" title="Setting" id="pgO-Dc-Bpe">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="nPj-t0-ZDw">
                             <connections>
                                 <action selector="doneButtonPressed:" destination="Wuy-V5-GcU" id="CZz-E1-tD6"/>
