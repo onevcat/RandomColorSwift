@@ -43,14 +43,14 @@ class ViewController: UICollectionViewController {
     //MARK: Segue Transition
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showSetting" {
-            let settingVC = (segue.destinationViewController as UINavigationController).topViewController as SettingViewController
+            let settingVC = (segue.destinationViewController as! UINavigationController).topViewController as! SettingViewController
             settingVC.delegate = self
             settingVC.count = count
             settingVC.hue = hue
             settingVC.luminosity = luminosity
         } else if segue.identifier == "showDetail" {
-            if let indexPath = collectionView?.indexPathForCell(sender as UICollectionViewCell) {
-                let detailVC = segue.destinationViewController as DetailViewController
+            if let indexPath = collectionView?.indexPathForCell(sender as! UICollectionViewCell) {
+                let detailVC = segue.destinationViewController as! DetailViewController
                 detailVC.color = colors[indexPath.row]
             }
         }
@@ -69,7 +69,7 @@ extension ViewController: UICollectionViewDataSource {
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as UICollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! UICollectionViewCell
         cell.contentView.backgroundColor = colors[indexPath.row]
         return cell
     }

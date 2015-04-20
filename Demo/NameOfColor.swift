@@ -39,7 +39,7 @@ extension UIColor {
     var name: String {
         get {
             let colorInfo = context.evaluateScript("ntc.name('\(self.hexString)')").toArray()
-            return colorInfo[1] as String
+            return colorInfo[1] as! String
         }
     }
 }
