@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = "8.0"
   s.osx.deployment_target = "10.10"
 
-  s.source       = { :git => "http://EXAMPLE/RandomColorSwift.git", :tag => s.version }
+  s.source       = { :git => "https://github.com/onevcat/RandomColorSwift.git", :tag => s.version }
 
   s.source_files  = "RandomColor/*.swift"
   s.requires_arc = true
