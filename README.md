@@ -8,11 +8,38 @@ See the [demo and site](http://llllll.li/randomColor/) to know why does this exi
 
 ## Install
 
-I wish we could use CocoaPods or something else for package management for Swift. Currently, you can clone this repo and throw the source files under `RandomColor` folder into your project to use it. I suggest to add them to a standalone Cocoa/CocoaTouch Framework target, to avoid potential risk of name conflict.
+### CocoaPods
+
+The easiest way to use `RandomColor` is installing it by [CocoaPods](http://cocoapods.org). Add these lines to your Podfile:
+
+```ruby
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.0'
+# platform :osx, '10.10'
+use_frameworks!
+
+pod 'RandomColorSwift'
+```
+
+### Carthage
+
+[Carthage](https://github.com/Carthage/Carthage) is also supported:
+
+```ogdl
+github "onevcat/RandomColorSwift"
+```
+
+### Manually
+
+If you need to support iOS 7.x, you will need to add the library manually into your project since dynamic framework is not supported for iOS 7.
+
+Clone this repo and throw the source files under `RandomColor` folder into your project to use it. 
 
 ## Example
 
 ```swift
+import RandomColor
+
 // Returns a UIColor or NSColor object for an attractive color
 let color = randomColor()
 
