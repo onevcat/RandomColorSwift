@@ -78,16 +78,16 @@ public func randomColor(hue hue: Hue = .Random, luminosity: Luminosity = .Random
             hueValue -= 360
         }
         
-        var color = colorDictionary.values.filter({ (definition: ColorDefinition) -> Bool in
+        let color = colorDictionary.values.filter({ (definition: ColorDefinition) -> Bool in
             if let hueRange = definition.hueRange {
                 return hueValue >= hueRange.min && hueValue <= hueRange.max
             } else {
                 return false
             }
-        }).array
+        })
         
         assert(color.count == 1, "There should one and only one color satisfied the filter")
-        return color[0]
+        return color.first!
     }
     
     func pickHue(hue: Hue) -> Int {
