@@ -38,7 +38,7 @@ Clone this repo and throw the source files under `RandomColor` folder into your 
 ## Example
 
 ```swift
-import RandomColor
+import RandomColorSwift
 
 // Returns a UIColor or NSColor object for an attractive color
 let color = randomColor()
