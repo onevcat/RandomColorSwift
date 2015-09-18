@@ -4,7 +4,7 @@ Inspired by David Merfield's [randomColor.js](https://github.com/davidmerfield/r
 
 See the [demo and site](http://llllll.li/randomColor/) to know why does this exist.
 
-[![Demo](http://llllll.li/randomColor/repo_demo.gif)](http://llllll.li/randomColor)
+![](https://raw.githubusercontent.com/onevcat/RandomColorSwift/master/demo.png)
 
 ## Install
 
