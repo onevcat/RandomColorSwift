@@ -40,7 +40,7 @@ public enum Hue {
         case .Blue: return 6
         case .Purple: return 7
         case .Pink: return 8
-        case .Value(let value): return -1
+        case .Value(_): return -1
         case .Random: return 0
         }
     }
