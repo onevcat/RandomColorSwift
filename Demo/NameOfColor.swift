@@ -12,7 +12,7 @@ import JavaScriptCore
 private var context: JSContext = {
     let jsPath = NSBundle.mainBundle().pathForResource("ntc", ofType: "js")!
     var error: NSError?
-    let jsString = String(contentsOfFile:jsPath, encoding: NSUTF8StringEncoding, error: &error)
+    let jsString = try! String(contentsOfFile:jsPath, encoding: NSUTF8StringEncoding)
     
     let context = JSContext()
     context.evaluateScript(jsString)

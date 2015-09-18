@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "CB7125A4ADA41B167DDE5DB0E9C68C826064550E",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "CB7125A4ADA41B167DDE5DB0E9C68C826064550E" : 0,
+    "D68E8727ACCA31E3C05F0E30ECD84945E4806784" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "4ADA76A9-15AE-4B18-835F-A7627A77B6A7",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "CB7125A4ADA41B167DDE5DB0E9C68C826064550E" : "RandomColorSwift",
+    "D68E8727ACCA31E3C05F0E30ECD84945E4806784" : "Easy-Cal-Swift"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "RandomColorSwift",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "RandomColorSwift.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:onevcat\/RandomColorSwift.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "CB7125A4ADA41B167DDE5DB0E9C68C826064550E"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:onevcat\/Easy-Cal-Swift.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D68E8727ACCA31E3C05F0E30ECD84945E4806784"
+    }
+  ]
+}

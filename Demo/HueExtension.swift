@@ -42,7 +42,7 @@ extension Hue {
     }
 }
 
-extension Hue: Printable {
+extension Hue: CustomStringConvertible {
     public var description: String {
         get {
             switch self {
@@ -54,7 +54,7 @@ extension Hue: Printable {
             case .Blue: return "Blue"
             case .Purple: return "Purple"
             case .Pink: return "Pink"
-            case .Value(let value): return "Value"
+            case .Value(_): return "Value"
             case .Random: return "Random"
             }
         }

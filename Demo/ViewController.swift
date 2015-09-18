@@ -63,13 +63,13 @@ class ViewController: UICollectionViewController {
 }
 
 //MARK: Collection View DataSource
-extension ViewController: UICollectionViewDataSource {
+extension ViewController {
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return colors.count
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! UICollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath)
         cell.contentView.backgroundColor = colors[indexPath.row]
         return cell
     }
