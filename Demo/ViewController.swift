@@ -30,8 +30,8 @@ class ViewController: UICollectionViewController {
     var colors: [UIColor]!
     
     private var count = 99
-    private var hue: Hue = .Random
-    private var luminosity: Luminosity = .Light
+    private var hue: Hue = .random
+    private var luminosity: Luminosity = .light
     
     //MARK: Life cycle
     override func viewDidLoad() {
@@ -41,7 +41,7 @@ class ViewController: UICollectionViewController {
     }
     
     //MARK: Segue Transition
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showSetting" {
             let settingVC = (segue.destinationViewController as! UINavigationController).topViewController as! SettingViewController
             settingVC.delegate = self
@@ -49,7 +49,7 @@ class ViewController: UICollectionViewController {
             settingVC.hue = hue
             settingVC.luminosity = luminosity
         } else if segue.identifier == "showDetail" {
-            if let indexPath = collectionView?.indexPathForCell(sender as! UICollectionViewCell) {
+            if let indexPath = collectionView?.indexPath(for: sender as! UICollectionViewCell) {
                 let detailVC = segue.destinationViewController as! DetailViewController
                 detailVC.color = colors[indexPath.row]
             }
@@ -64,12 +64,11 @@ class ViewController: UICollectionViewController {
 
 //MARK: Collection View DataSource
 extension ViewController {
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return colors.count
     }
-    
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath)
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath as IndexPath)
         cell.contentView.backgroundColor = colors[indexPath.row]
         return cell
     }
@@ -79,7 +78,7 @@ extension ViewController {
 extension ViewController: SettingViewControllerDelegate {
     
     func settingViewController(viewController: SettingViewController, didSetCount count: Int, hue: Hue, luminosity: Luminosity) {
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
         
         self.count = count
         self.hue = hue

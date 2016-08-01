@@ -10,13 +10,13 @@ import UIKit
 import JavaScriptCore
 
 private var context: JSContext = {
-    let jsPath = NSBundle.mainBundle().pathForResource("ntc", ofType: "js")!
+    let jsPath = Bundle.main().pathForResource("ntc", ofType: "js")!
     var error: NSError?
-    let jsString = try! String(contentsOfFile:jsPath, encoding: NSUTF8StringEncoding)
+    let jsString = try! String(contentsOfFile:jsPath, encoding: String.Encoding.utf8)
     
     let context = JSContext()
-    context.evaluateScript(jsString)
-    return context
+    context!.evaluateScript(jsString)
+    return context!
 }()
 
 extension UIColor {
@@ -38,8 +38,11 @@ extension UIColor {
 extension UIColor {
     var name: String {
         get {
-            let colorInfo = context.evaluateScript("ntc.name('\(self.hexString)')").toArray()
-            return colorInfo[1] as! String
+            if let colorInfo = context.evaluateScript("ntc.name('\(self.hexString)')").toArray() {
+                return colorInfo[1] as! String
+            } else {
+                return "not found"
+            }
         }
     }
 }

@@ -25,6 +25,6 @@
 import Foundation
 
 public enum Luminosity: Int {
-    case Bright, Light, Dark
-    case Random
+    case bright, light, dark
+    case random
 }
