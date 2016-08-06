@@ -65,7 +65,7 @@ Generate a single random color with some conditions.
 
 - returns: A random color following input conditions. It will be a `UIColor` object for iOS target, and an `NSColor` object for OSX target.
 */
-public func randomColor(hue: Hue = .random, luminosity: Luminosity = .random) -> Color {
+public func randomColor(_ hue: Hue = .random, luminosity: Luminosity = .random) -> Color {
     
     func randomWithin(_ range: Range) -> Int {
         assert(range.max >= range.min, "Max in range should be greater than min")
@@ -203,7 +203,7 @@ Generate a set of random colors with some conditions.
 public func randomColorsCount(_ count: Int, hue: Hue = .random, luminosity: Luminosity = .random) -> [Color] {
     var colors: [Color] = []
     while (colors.count < count) {
-        colors.append(randomColor(hue: hue, luminosity: luminosity))
+        colors.append(randomColor(hue, luminosity: luminosity))
     }
     return colors
 }

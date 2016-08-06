@@ -26,7 +26,7 @@ import UIKit
 import RandomColor
 
 protocol SettingViewControllerDelegate: class {
-    func settingViewController(viewController: SettingViewController, didSetCount count: Int, hue: Hue, luminosity: Luminosity)
+    func settingViewController(_ viewController: SettingViewController, didSetCount count: Int, hue: Hue, luminosity: Luminosity)
 }
 
 class SettingViewController: UITableViewController {
@@ -66,7 +66,7 @@ class SettingViewController: UITableViewController {
         count = Int(slider.value)
         
         stepper.value = Double(hue.toInt())
-        hue = Hue.fromInt(value: Int(stepper.value))
+        hue = Hue.fromInt(Int(stepper.value))
         
         segment.selectedSegmentIndex = luminosity.rawValue
     }
@@ -75,19 +75,19 @@ class SettingViewController: UITableViewController {
 //MARK: UI Actions
 extension SettingViewController {
     
-    @IBAction func doneButtonPressed(sender: AnyObject) {
-        delegate?.settingViewController(viewController: self, didSetCount: count, hue: hue, luminosity: luminosity)
+    @IBAction func doneButtonPressed(_ sender: AnyObject) {
+        delegate?.settingViewController(self, didSetCount: count, hue: hue, luminosity: luminosity)
     }
     
-    @IBAction func countSliderValueChanged(slider: UISlider) {
+    @IBAction func countSliderValueChanged(_ slider: UISlider) {
         count = Int(slider.value)
     }
     
-    @IBAction func stepperValueChanged(stepper: UIStepper) {
-        hue = Hue.fromInt(value: Int(stepper.value))
+    @IBAction func stepperValueChanged(_ stepper: UIStepper) {
+        hue = Hue.fromInt(Int(stepper.value))
     }
     
-    @IBAction func segmentValueChanged(segment: UISegmentedControl) {
+    @IBAction func segmentValueChanged(_ segment: UISegmentedControl) {
         if let value = Luminosity(rawValue: segment.selectedSegmentIndex) {
             luminosity = value
         }

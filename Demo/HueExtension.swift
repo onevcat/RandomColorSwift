@@ -26,7 +26,7 @@ import Foundation
 import RandomColor
 
 extension Hue {
-    public static func fromInt(value: Int) -> Hue {
+    public static func fromInt(_ value: Int) -> Hue {
         switch value {
         case 1: return .monochrome
         case 2: return .red

@@ -10,7 +10,7 @@ import UIKit
 import JavaScriptCore
 
 private var context: JSContext = {
-    let jsPath = Bundle.main().pathForResource("ntc", ofType: "js")!
+    let jsPath = Bundle.main.path(forResource: "ntc", ofType: "js")!
     var error: NSError?
     let jsString = try! String(contentsOfFile:jsPath, encoding: String.Encoding.utf8)
     

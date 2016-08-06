@@ -43,14 +43,14 @@ class ViewController: UICollectionViewController {
     //MARK: Segue Transition
     override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showSetting" {
-            let settingVC = (segue.destinationViewController as! UINavigationController).topViewController as! SettingViewController
+            let settingVC = (segue.destination as! UINavigationController).topViewController as! SettingViewController
             settingVC.delegate = self
             settingVC.count = count
             settingVC.hue = hue
             settingVC.luminosity = luminosity
         } else if segue.identifier == "showDetail" {
             if let indexPath = collectionView?.indexPath(for: sender as! UICollectionViewCell) {
-                let detailVC = segue.destinationViewController as! DetailViewController
+                let detailVC = segue.destination as! DetailViewController
                 detailVC.color = colors[indexPath.row]
             }
         }
@@ -77,7 +77,7 @@ extension ViewController {
 
 extension ViewController: SettingViewControllerDelegate {
     
-    func settingViewController(viewController: SettingViewController, didSetCount count: Int, hue: Hue, luminosity: Luminosity) {
+    func settingViewController(_ viewController: SettingViewController, didSetCount count: Int, hue: Hue, luminosity: Luminosity) {
         dismiss(animated: true, completion: nil)
         
         self.count = count
