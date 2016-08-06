@@ -2,7 +2,7 @@
 //  ColorDefinition.swift
 //  RandomColorSwift
 //
-//  Copyright (c) 2015 Wei Wang (http://onevcat.com)
+//  Copyright (c) 2016 Wei Wang (http://onevcat.com)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal

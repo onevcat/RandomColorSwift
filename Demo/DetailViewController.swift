@@ -3,7 +3,7 @@
 //  RandomColorSwift
 //
 //  Created by WANG WEI on 2015/01/23.
-//  Copyright (c) 2015年 OneV's Den. All rights reserved.
+//  Copyright (c) 2016年 OneV's Den. All rights reserved.
 //
 
 import UIKit
