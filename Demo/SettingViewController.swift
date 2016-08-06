@@ -36,13 +36,13 @@ class SettingViewController: UITableViewController {
             countLabel?.text = String(count)
         }
     }
-    var hue: Hue = .Random {
+    var hue: Hue = .random {
         didSet {
             hueLabel?.text = "\(hue)"
         }
     }
     
-    var luminosity: Luminosity = .Light
+    var luminosity: Luminosity = .light
     
     //MARK: Delegate
     weak var delegate: SettingViewControllerDelegate?
@@ -66,7 +66,7 @@ class SettingViewController: UITableViewController {
         count = Int(slider.value)
         
         stepper.value = Double(hue.toInt())
-        hue = Hue.fromInt(Int(stepper.value))
+        hue = Hue.fromInt(value: Int(stepper.value))
         
         segment.selectedSegmentIndex = luminosity.rawValue
     }
@@ -76,7 +76,7 @@ class SettingViewController: UITableViewController {
 extension SettingViewController {
     
     @IBAction func doneButtonPressed(sender: AnyObject) {
-        delegate?.settingViewController(self, didSetCount: count, hue: hue, luminosity: luminosity)
+        delegate?.settingViewController(viewController: self, didSetCount: count, hue: hue, luminosity: luminosity)
     }
     
     @IBAction func countSliderValueChanged(slider: UISlider) {
@@ -84,7 +84,7 @@ extension SettingViewController {
     }
     
     @IBAction func stepperValueChanged(stepper: UIStepper) {
-        hue = Hue.fromInt(Int(stepper.value))
+        hue = Hue.fromInt(value: Int(stepper.value))
     }
     
     @IBAction func segmentValueChanged(segment: UISegmentedControl) {

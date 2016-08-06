@@ -28,16 +28,16 @@ import RandomColor
 extension Hue {
     public static func fromInt(value: Int) -> Hue {
         switch value {
-        case 1: return .Monochrome
-        case 2: return .Red
-        case 3: return .Orange
-        case 4: return .Yellow
-        case 5: return .Green
-        case 6: return .Blue
-        case 7: return .Purple
-        case 8: return .Pink
-        case -1: return .Value(0)
-        default: return .Random
+        case 1: return .monochrome
+        case 2: return .red
+        case 3: return .orange
+        case 4: return .yellow
+        case 5: return .green
+        case 6: return .blue
+        case 7: return .purple
+        case 8: return .pink
+        case -1: return .value(0)
+        default: return .random
         }
     }
 }
@@ -46,16 +46,16 @@ extension Hue: CustomStringConvertible {
     public var description: String {
         get {
             switch self {
-            case .Monochrome: return "Monochrome"
-            case .Red: return "Red"
-            case .Orange: return "Orange"
-            case .Yellow: return "Yellow"
-            case .Green: return "Green"
-            case .Blue: return "Blue"
-            case .Purple: return "Purple"
-            case .Pink: return "Pink"
-            case .Value(_): return "Value"
-            case .Random: return "Random"
+            case .monochrome: return "Monochrome"
+            case .red: return "Red"
+            case .orange: return "Orange"
+            case .yellow: return "Yellow"
+            case .green: return "Green"
+            case .blue: return "Blue"
+            case .purple: return "Purple"
+            case .pink: return "Pink"
+            case .value(_): return "Value"
+            case .random: return "Random"
             }
         }
     }
