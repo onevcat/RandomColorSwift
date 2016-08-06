@@ -57,7 +57,7 @@ class ViewController: UICollectionViewController {
     }
     
     func refresh() {
-        colors = randomColorsCount(count, hue: hue, luminosity: luminosity)
+        colors = randomColors(count: count, hue: hue, luminosity: luminosity)
         collectionView?.reloadData()
     }
 }

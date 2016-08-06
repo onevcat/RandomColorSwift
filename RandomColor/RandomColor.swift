@@ -42,7 +42,7 @@ private var colorDictionary: [Hue: ColorDefinition] = [
 ]
 
 extension Hue {
-    func toRange() -> Range {
+    var range: Range {
         switch self {
         case .value(let value): return (value, value)
         case .random: return (0, 360)
@@ -65,14 +65,14 @@ Generate a single random color with some conditions.
 
 - returns: A random color following input conditions. It will be a `UIColor` object for iOS target, and an `NSColor` object for OSX target.
 */
-public func randomColor(_ hue: Hue = .random, luminosity: Luminosity = .random) -> Color {
+public func randomColor(hue: Hue = .random, luminosity: Luminosity = .random) -> Color {
     
-    func randomWithin(_ range: Range) -> Int {
+    func random(in range: Range) -> Int {
         assert(range.max >= range.min, "Max in range should be greater than min")
         return Int(arc4random_uniform(UInt32(range.max - range.min))) + range.min
     }
     
-    func getColorDefinition(_ hueValue: Int) -> ColorDefinition {
+    func getColorDefinition(hueValue: Int) -> ColorDefinition {
         var hueValue = hueValue
         
         if hueValue >= 334 && hueValue <= 360 {
@@ -92,8 +92,7 @@ public func randomColor(_ hue: Hue = .random, luminosity: Luminosity = .random) 
     }
     
     func pickHue(_ hue: Hue) -> Int {
-        let hueRange = hue.toRange()
-        var hueValue = randomWithin(hueRange)
+        var hueValue = random(in: hue.range)
         
         // Instead of storing red as two seperate ranges,
         // we group them, using negative numbers
@@ -103,11 +102,11 @@ public func randomColor(_ hue: Hue = .random, luminosity: Luminosity = .random) 
         return hueValue
     }
     
-    func pickSaturation(_ color: ColorDefinition, hue: Hue, luminosity: Luminosity) -> Int {
+    func pickSaturation(color: ColorDefinition, hue: Hue, luminosity: Luminosity) -> Int {
         var color = color
         
         if luminosity == .random {
-            return randomWithin((0, 100))
+            return random(in: (0, 100))
         }
         
         if hue == .monochrome {
@@ -128,13 +127,13 @@ public func randomColor(_ hue: Hue = .random, luminosity: Luminosity = .random) 
         default: ()
         }
         
-        return randomWithin((sMin, sMax))
+        return random(in: (sMin, sMax))
     }
     
-    func pickBrightness(_ color: ColorDefinition, saturationValue: Int, luminosity: Luminosity) -> Int {
+    func pickBrightness(color: ColorDefinition, saturationValue: Int, luminosity: Luminosity) -> Int {
         var color = color
  
-        func getMinimumBrightness(_ saturationValue: Int) -> Int {
+        func getMinimumBrightness(saturationValue: Int) -> Int {
             var lowerBounds = color.lowerBounds;
             for i in 0 ..< lowerBounds.count - 1 {
                 
@@ -153,7 +152,7 @@ public func randomColor(_ hue: Hue = .random, luminosity: Luminosity = .random) 
             return 0
         }
         
-        var bMin = getMinimumBrightness(saturationValue)
+        var bMin = getMinimumBrightness(saturationValue: saturationValue)
         var bMax = 100
         
         switch luminosity {
@@ -167,16 +166,16 @@ public func randomColor(_ hue: Hue = .random, luminosity: Luminosity = .random) 
         default: ()
         }
         
-        return randomWithin((bMin, bMax))
+        return random(in: (bMin, bMax))
     }
 
     
     let hueValue = pickHue(hue)
     
-    let color = getColorDefinition(hueValue)
+    let color = getColorDefinition(hueValue: hueValue)
     
-    let saturationValue = pickSaturation(color, hue: hue, luminosity: luminosity)
-    let brightnessValue = pickBrightness(color, saturationValue: saturationValue, luminosity: luminosity)
+    let saturationValue = pickSaturation(color: color, hue: hue, luminosity: luminosity)
+    let brightnessValue = pickBrightness(color: color, saturationValue: saturationValue, luminosity: luminosity)
     
     #if os(iOS)
     return Color(hue: CGFloat(hueValue) / 360.0,
@@ -200,10 +199,10 @@ Generate a set of random colors with some conditions.
 
 - returns: An array of random colors following input conditions. The elements will be `UIColor` objects for iOS target, and `NSColor` objects for OSX target.
 */
-public func randomColorsCount(_ count: Int, hue: Hue = .random, luminosity: Luminosity = .random) -> [Color] {
+public func randomColors(count: Int, hue: Hue = .random, luminosity: Luminosity = .random) -> [Color] {
     var colors: [Color] = []
     while (colors.count < count) {
-        colors.append(randomColor(hue, luminosity: luminosity))
+        colors.append(randomColor(hue: hue, luminosity: luminosity))
     }
     return colors
 }
