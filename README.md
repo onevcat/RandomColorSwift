@@ -1,6 +1,6 @@
 # Random Color Swift
 
-Inspired by David Merfield's [randomColor.js](https://github.com/davidmerfield/randomColor). It is a ported version to Swift. You can use the library to generate attractive random colors on iOS or OSX.
+Inspired by David Merfield's [randomColor.js](https://github.com/davidmerfield/randomColor). It is a ported version to Swift. You can use the library to generate attractive random colors on iOS or macOS.
 
 See the [demo and site](http://llllll.li/randomColor/) to know why does this exist.
 
