@@ -29,9 +29,9 @@ class ViewController: UICollectionViewController {
 
     var colors: [UIColor]!
     
-    private var count = 99
-    private var hue: Hue = .random
-    private var luminosity: Luminosity = .light
+    fileprivate var count = 99
+    fileprivate var hue: Hue = .random
+    fileprivate var luminosity: Luminosity = .light
     
     //MARK: Life cycle
     override func viewDidLoad() {
@@ -41,7 +41,7 @@ class ViewController: UICollectionViewController {
     }
     
     //MARK: Segue Transition
-    override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showSetting" {
             let settingVC = (segue.destination as! UINavigationController).topViewController as! SettingViewController
             settingVC.delegate = self
