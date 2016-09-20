@@ -8,6 +8,8 @@ See the [demo and site](http://llllll.li/randomColor/) to know why does this exi
 
 ## Install
 
+This framework supports Swift 3.0 / Xcode 8 and above. If you need an earlier version for Swift 2, use [version 0.1.0](https://github.com/onevcat/RandomColorSwift/releases/tag/0.1.0) instead.
+
 ### CocoaPods
 
 The easiest way to use `RandomColor` is installing it by [CocoaPods](http://cocoapods.org). Add these lines to your Podfile:
@@ -81,3 +83,5 @@ The demo project is using Chirag Mehta's [Name the Color](http://chir.ag/project
 ## License
 
 This project is licensed under the terms of the MIT license.
+
+
