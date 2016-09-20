@@ -2,7 +2,7 @@
 //  Hue.swift
 //  RandomColorSwift
 //
-//  Copyright (c) 2015 Wei Wang (http://onevcat.com)
+//  Copyright (c) 2016 Wei Wang (http://onevcat.com)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -26,22 +26,22 @@ import Foundation
 
 public enum Hue {
     
-    case Monochrome, Red, Orange, Yellow, Green, Blue, Purple, Pink
-    case Value(Int)
-    case Random
+    case monochrome, red, orange, yellow, green, blue, purple, pink
+    case value(Int)
+    case random
 
     public func toInt() -> Int {
         switch self {
-        case .Monochrome: return 1
-        case .Red: return 2
-        case .Orange: return 3
-        case .Yellow: return 4
-        case .Green: return 5
-        case .Blue: return 6
-        case .Purple: return 7
-        case .Pink: return 8
-        case .Value(_): return -1
-        case .Random: return 0
+        case .monochrome: return 1
+        case .red: return 2
+        case .orange: return 3
+        case .yellow: return 4
+        case .green: return 5
+        case .blue: return 6
+        case .purple: return 7
+        case .pink: return 8
+        case .value(_): return -1
+        case .random: return 0
         }
     }
 }

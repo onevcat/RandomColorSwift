@@ -2,7 +2,7 @@
 //  SettingViewController.swift
 //  RandomColorSwift
 //
-//  Copyright (c) 2015 Wei Wang (http://onevcat.com)
+//  Copyright (c) 2016 Wei Wang (http://onevcat.com)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -26,7 +26,7 @@ import UIKit
 import RandomColor
 
 protocol SettingViewControllerDelegate: class {
-    func settingViewController(viewController: SettingViewController, didSetCount count: Int, hue: Hue, luminosity: Luminosity)
+    func settingViewController(_ viewController: SettingViewController, didSetCount count: Int, hue: Hue, luminosity: Luminosity)
 }
 
 class SettingViewController: UITableViewController {
@@ -36,13 +36,13 @@ class SettingViewController: UITableViewController {
             countLabel?.text = String(count)
         }
     }
-    var hue: Hue = .Random {
+    var hue: Hue = .random {
         didSet {
             hueLabel?.text = "\(hue)"
         }
     }
     
-    var luminosity: Luminosity = .Light
+    var luminosity: Luminosity = .light
     
     //MARK: Delegate
     weak var delegate: SettingViewControllerDelegate?
@@ -75,19 +75,19 @@ class SettingViewController: UITableViewController {
 //MARK: UI Actions
 extension SettingViewController {
     
-    @IBAction func doneButtonPressed(sender: AnyObject) {
+    @IBAction func doneButtonPressed(_ sender: AnyObject) {
         delegate?.settingViewController(self, didSetCount: count, hue: hue, luminosity: luminosity)
     }
     
-    @IBAction func countSliderValueChanged(slider: UISlider) {
+    @IBAction func countSliderValueChanged(_ slider: UISlider) {
         count = Int(slider.value)
     }
     
-    @IBAction func stepperValueChanged(stepper: UIStepper) {
+    @IBAction func stepperValueChanged(_ stepper: UIStepper) {
         hue = Hue.fromInt(Int(stepper.value))
     }
     
-    @IBAction func segmentValueChanged(segment: UISegmentedControl) {
+    @IBAction func segmentValueChanged(_ segment: UISegmentedControl) {
         if let value = Luminosity(rawValue: segment.selectedSegmentIndex) {
             luminosity = value
         }

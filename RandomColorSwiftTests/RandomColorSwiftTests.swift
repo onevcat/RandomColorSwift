@@ -3,7 +3,7 @@
 //  RandomColorSwiftTests
 //
 //  Created by WANG WEI on 2015/01/22.
-//  Copyright (c) 2015年 OneV's Den. All rights reserved.
+//  Copyright (c) 2016年 OneV's Den. All rights reserved.
 //
 
 import UIKit
@@ -28,7 +28,7 @@ class RandomColorSwiftTests: XCTestCase {
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measureBlock() {
+        self.measure() {
             // Put the code you want to measure the time of here.
         }
     }
