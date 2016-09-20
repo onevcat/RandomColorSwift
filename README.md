@@ -46,7 +46,7 @@ import RandomColorSwift
 let color = randomColor()
 
 // Returns an array of ten green colors
-let greenColors = randomColorsCount(10, hue: .Green)
+let greenColors = randomColors(count: 10, hue: .Green)
 
 // Returns a color for light blue
 let lightBlurColor = randomColor(hue: .Blue, luminosity: .Light)
@@ -55,10 +55,10 @@ let lightBlurColor = randomColor(hue: .Blue, luminosity: .Light)
 let randomColor = randomColor(hue: .Random, luminosity: .Random)
 
 // Returns an array of ten dark pink colors
-let darkPinkColors = randomColorsCount(10, hue: .Pink, luminosity: .Dark)
+let darkPinkColors = randomColors(count: 10, hue: .Pink, luminosity: .Dark)
 
 // Returns an array of twenty colors at hue of 120
-let colors = randomColorsCount(20, hue: .Value(120), luminosity: .Random)
+let colors = randomColors(count: 20, hue: .Value(120), luminosity: .Random)
 
 ```
 
@@ -68,9 +68,9 @@ There is also a demo project in this repo.
 
 You can pass an options object to influence the type of color it produces. The options object accepts the following properties:
 
-**Hue** – Controls the hue of the generated color. Possible hue values for colors are `.Monochrome`, `.Red`, `.Orange`, `.Yellow`, `.Green`, `.Blue`, `.Purple`, `.Pink`, `.Random` or `.Value(Int)`. If you use `.Value(Int)`, you should pass an `Int` between 0 and 360.
+**Hue** – Controls the hue of the generated color. Possible hue values for colors are `.monochrome`, `.red`, `.orange`, `.yellow`, `.green`, `.blue`, `.purple`, `.pink`, `.random` or `.value(Int)`. If you use `.value(Int)`, you should pass an `Int` between 0 and 360.
 
-**Luminosity** – Controls the luminosity of the generated color. You can pass `.Bright`, `.Light`, `.Dark` or `.Random`.
+**Luminosity** – Controls the luminosity of the generated color. You can pass `.bright`, `.light`, `.dark` or `.random`.
 
 **Count** – An `Int` which specifies the number of colors to generate.
 
