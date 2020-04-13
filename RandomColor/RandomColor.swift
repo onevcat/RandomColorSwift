@@ -2,7 +2,7 @@
 //  RandomColor.swift
 //  RandomColorSwift
 //
-//  Copyright (c) 2016 Wei Wang (http://onevcat.com)
+//  Copyright (c) 2020 Wei Wang (http://onevcat.com)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -22,7 +22,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-#if os(iOS)
+#if canImport(UIKit)
 import UIKit
 public typealias Color = UIColor
 #else
@@ -177,7 +177,7 @@ public func randomColor(hue: Hue = .random, luminosity: Luminosity = .random) ->
     let saturationValue = pickSaturation(color: color, hue: hue, luminosity: luminosity)
     let brightnessValue = pickBrightness(color: color, saturationValue: saturationValue, luminosity: luminosity)
     
-    #if os(iOS)
+    #if canImport(UIKit)
     return Color(hue: CGFloat(hueValue) / 360.0,
             saturation: CGFloat(saturationValue) / 100.0,
             brightness: CGFloat(brightnessValue) / 100.0,

@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "RandomColorSwift"
-  s.version      = "1.0.0"
+  s.version      = "2.0.0"
   s.summary      = "An attractive color generator for Swift. Ported from randomColor.js."
 
   s.description  = <<-DESC
@@ -25,6 +25,6 @@ Pod::Spec.new do |s|
 
   s.source_files  = "RandomColor/*.swift"
   s.requires_arc = true
-  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '5.0' }
+  s.swift_versions = ['4.0', '4.2', '5.0']
   
 end
