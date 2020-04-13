@@ -51,9 +51,7 @@ public func == (lhs: Hue, rhs: Hue) -> Bool {
 }
 
 extension Hue: Hashable {
-    public var hashValue: Int {
-        get {
-            return self.toInt()
-        }
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(self.toInt())
     }
 }
