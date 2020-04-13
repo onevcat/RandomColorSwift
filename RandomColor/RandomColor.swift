@@ -134,7 +134,7 @@ public func randomColor(hue: Hue = .random, luminosity: Luminosity = .random) ->
         var color = color
  
         func getMinimumBrightness(saturationValue: Int) -> Int {
-            var lowerBounds = color.lowerBounds;
+            let lowerBounds = color.lowerBounds;
             for i in 0 ..< lowerBounds.count - 1 {
                 
                 let s1 = Float(lowerBounds[i].0)
