@@ -2,13 +2,31 @@
 
 Inspired by David Merfield's [randomColor.js](https://github.com/davidmerfield/randomColor). It is a ported version to Swift. You can use the library to generate attractive random colors on iOS or macOS.
 
-See the [demo and site](http://llllll.li/randomColor/) to know why does this exist.
-
 ![](https://raw.githubusercontent.com/onevcat/RandomColorSwift/master/demo.png)
 
 ## Install
 
-This framework supports Swift 3.0 / Xcode 8 and above. If you need an earlier version for Swift 2, use [version 0.1.0](https://github.com/onevcat/RandomColorSwift/releases/tag/0.1.0) instead.
+This framework supports Swift 4.0/4.2/5.0 and above.
+
+### Swift Package Manager
+
+Just like using any other Swift Package, add this repo to the `dependencies` section and depend it in your target:
+
+```swift
+let package = Package(
+    name: "MyApp",
+    //...
+    dependencies: [
+        .package(url: "https://github.com/onevcat/RandomColorSwift.git", .upToNextMajor(from: "2.0.0")),
+    ],
+    targets: [
+        .target(
+            name: "MyApp",
+            dependencies: ["RandomColor"]),
+    ]
+```
+
+Or, use the Swift Package Manager integrated in Xcode 11 or above to [add this package as a dependency to your app](https://developer.apple.com/documentation/xcode/adding_package_dependencies_to_your_app).
 
 ### CocoaPods
 
